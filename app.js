@@ -1,15 +1,11 @@
-// Practica DevSecOps - Simulacion de secreto expuesto
+// Practica DevSecOps - Remediacion de secretos
+// Las credenciales se obtienen de variables de entorno.
 
 const config = {
-    usuario: "admin",
-    password: "ClaveFicticia123!",
-    github_token: "ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij"
+    usuario: process.env.APP_USER,
+    password: process.env.APP_PASSWORD,
+    github_token: process.env.GITHUB_TOKEN
 };
 
 console.log("Aplicacion iniciada");
-
-// Token ficticio oficial de prueba para GitHub Secret Scanning
-const tokenPrueba = "secret_scanning_ab85fc0f8d7638cfc11da812da308d43_abcde";
-
-// Prueba oficial de GitHub Secret Scanning
-const tokenOficial = "secret_scanning_ab85fc6f8d7638cf1c11da812da308d43_abcde";
+console.log("Usuario configurado:", config.usuario);
